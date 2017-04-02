@@ -21,8 +21,8 @@
 
 /obj/item/weapon/dnainjector/New()
 	if(datatype && block)
-		buf=new
-		buf.dna=new
+		buf = new
+		buf.dna = new
 		buf.types = datatype
 		buf.dna.ResetSE()
 		//testing("[name]: DNA2 SE blocks prior to SetValue: [english_list(buf.dna.SE)]")
@@ -125,8 +125,8 @@
 
 	// Used by admin log.
 	var/injected_with_monkey = ""
-	if((buf.types & DNA2_BUF_SE) && (block ? (GetState() && block == MONKEYBLOCK) : GetState(MONKEYBLOCK)))
-		injected_with_monkey = " <span class='danger'>(MONKEY)</span>"
+
+	//TODO: DNA3. monkey_block log.
 
 	admin_attack_log(user, M,
 		"Used the [name] to inject [M.name] ([M.ckey])",

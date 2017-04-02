@@ -1334,7 +1334,8 @@
 				src.sight |= SEE_TURFS|SEE_MOBS|SEE_OBJS
 		else
 			var/isRemoteObserve = 0
-			if((mRemote in mutations) && remoteview_target)
+			//TODO: DNA3. Remoteview.
+			if(remoteview_target)
 				if(remoteview_target.stat==CONSCIOUS)
 					isRemoteObserve = 1
 			if(!isRemoteObserve && client && !client.adminobs)

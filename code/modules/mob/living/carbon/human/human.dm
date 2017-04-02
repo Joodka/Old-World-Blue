@@ -856,9 +856,6 @@
 		remoteview_target = null
 		return
 
-	if(!(mRemotetalk in src.mutations))
-		src.verbs -= /mob/living/carbon/human/proc/remotesay
-		return
 	var/list/creatures = list()
 	for(var/mob/living/carbon/h in world)
 		creatures += h
@@ -1038,7 +1035,7 @@
 				if(species.flags & NO_PAIN)
 					src << "<span class='warning'>You feel [O] moving inside your [organ.name].</span>"
 				else
-					var/msg = pick( \
+					var/msg = pick(
 						"<span class='warning'>A spike of pain jolts your [organ.name] as you bump [O] inside.</span>", \
 						"<span class='warning'>Your movement jostles [O] in your [organ.name] painfully.</span>", \
 						"<span class='warning'>Your movement jostles [O] in your [organ.name] painfully.</span>")

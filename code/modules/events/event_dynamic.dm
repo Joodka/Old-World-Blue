@@ -8,11 +8,6 @@ var/list/event_last_fired = list()
 	var/minutes_passed = world.time/600
 
 	var/list/active_with_role = number_active_with_role()
-	//var/engineer_count = number_active_with_role("Engineer")
-	//var/security_count = number_active_with_role("Security")
-	//var/medical_count = number_active_with_role("Medical")
-	//var/AI_count = number_active_with_role("AI")
-	//var/janitor_count = number_active_with_role("Janitor")
 
 	// Maps event names to event chances
 	// For each chance, 100 represents "normal likelihood", anything below 100 is "reduced likelihood", anything above 100 is "increased likelihood"

@@ -174,8 +174,6 @@ var/global/Holiday = null
 				containers += S
 
 			message_admins("\blue DEBUG: Event: Egg spawned at [Egg.loc] ([Egg.x],[Egg.y],[Egg.z])")*/
-		if("End of the World")
-			if(prob(eventchance))	GameOver()
 
 		if("Christmas","Christmas Eve")
-			if(prob(eventchance))	ChristmasEvent()
+			if(prob(10))	ChristmasEvent()

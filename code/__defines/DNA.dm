@@ -17,7 +17,6 @@
 #define PLANT         30
 
 // Other Mutations:
-#define mNobreath      100 // No need to breathe.
 #define mRemote        101 // Remote viewing.
 #define mRegen         102 // Health regeneration.
 #define mRun           103 // No slowdown.

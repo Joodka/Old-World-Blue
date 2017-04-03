@@ -347,8 +347,6 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 		update_inv_back(0)
 		update_inv_wear_mask()
 
-	domutcheck(src, null)
-
 	src.verbs -= /mob/proc/changeling_transform
 	spawn(10)	src.verbs += /mob/proc/changeling_transform
 	return 1
@@ -447,7 +445,6 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 	O.loc = C.loc
 
 	O.UpdateAppearance()
-	domutcheck(O, null)
 	O.setToxLoss(C.getToxLoss())
 	O.adjustBruteLoss(C.getBruteLoss())
 	O.setOxyLoss(C.getOxyLoss())
@@ -886,7 +883,6 @@ var/list/datum/dna/hivemind_bank = list()
 		T.dna = chosen_dna.Clone()
 		T.real_name = chosen_dna.real_name
 		T.UpdateAppearance()
-		domutcheck(T, null)
 		return 1
 	return
 

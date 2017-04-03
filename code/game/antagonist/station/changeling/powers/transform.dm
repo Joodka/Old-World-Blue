@@ -40,7 +40,6 @@
 		H.flavor_texts = chosen_dna.flavour_texts ? chosen_dna.flavour_texts.Copy() : null
 	src.real_name = chosen_dna.name
 	src.UpdateAppearance()
-	domutcheck(src, null)
 	changeling_update_languages(changeling.absorbed_languages)
 
 	src.verbs -= /mob/living/proc/changeling_transform

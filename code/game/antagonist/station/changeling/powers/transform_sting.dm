@@ -50,7 +50,6 @@
 		T.dna = chosen_dna.Clone()
 		T.real_name = chosen_dna.real_name
 		T.UpdateAppearance()
-		domutcheck(T, null)
 		return 1
 	T << "<span class='warning'>You feel a tiny prick.</span>"
 	return 1

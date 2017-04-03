@@ -882,12 +882,6 @@
 		reset_view(0)
 		return
 
-	if(!(mRemote in src.mutations))
-		remoteview_target = null
-		reset_view(0)
-		src.verbs -= /mob/living/carbon/human/proc/remoteobserve
-		return
-
 	if(client.eye != client.mob)
 		remoteview_target = null
 		reset_view(0)

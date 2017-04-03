@@ -228,8 +228,9 @@
 	name = "Telepathy Syndrome"
 	stage = 3
 	activate(var/mob/living/carbon/mob,var/multiplier)
-		mob.dna.SetSEState(REMOTETALKBLOCK,1)
-		domutcheck(mob, null, MUTCHK_FORCED)
+		mob.verbs += /mob/living/carbon/human/proc/remotesay
+	deactivate(var/mob/living/carbon/mob,var/multiplier)
+		mob.verbs -= /mob/living/carbon/human/proc/remotesay
 
 /datum/disease2/effect/mind
 	name = "Lazy Mind Syndrome"

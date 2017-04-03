@@ -94,7 +94,6 @@
 	O.loc = C.loc
 
 	O.UpdateAppearance()
-	domutcheck(O, null)
 	O.setToxLoss(C.getToxLoss())
 	O.adjustBruteLoss(C.getBruteLoss())
 	O.setOxyLoss(C.getOxyLoss())

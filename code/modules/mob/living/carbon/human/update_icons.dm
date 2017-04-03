@@ -106,34 +106,33 @@ Please contact me on #coderbus IRC. ~Carn x
 */
 
 //Human Overlays Indexes/////////
-#define MUTATIONS_LAYER			1
-#define DAMAGE_LAYER			2
-#define SURGERY_LEVEL			3		//bs12 specific.
-#define UNDERWEAR_LAYER			4
-#define UNIFORM_LAYER			5
-#define ID_LAYER				6
-#define SHOES_LAYER				7
-#define GLOVES_LAYER			8
-#define BELT_LAYER				9		//Possible make this an overlay of somethign required to wear a belt?
-#define SUIT_LAYER				10
-#define TAIL_LAYER				11		//bs12 specific. this hack is probably gonna come back to haunt me
-#define GLASSES_LAYER			12
-#define BELT_LAYER_ALT			13
-#define SUIT_STORE_LAYER		14
-#define BACK_LAYER				15
-#define HAIR_LAYER				16		//TODO: make part of head layer?
-#define EAR_L					17
-#define EAR_R					18
-#define FACEMASK_LAYER			19
-#define HEAD_LAYER				20
-#define COLLAR_LAYER			21
-#define HANDCUFF_LAYER			22
-#define LEGCUFF_LAYER			23
-#define L_HAND_LAYER			24
-#define R_HAND_LAYER			25
-#define FIRE_LAYER				26		//If you're on fire
-#define TARGETED_LAYER			27		//BS12: Layer for the target overlay from weapon targeting system
-#define TOTAL_LAYERS			27
+#define DAMAGE_LAYER			1
+#define SURGERY_LEVEL			2		//bs12 specific.
+#define UNDERWEAR_LAYER			3
+#define UNIFORM_LAYER			4
+#define ID_LAYER				5
+#define SHOES_LAYER				6
+#define GLOVES_LAYER			7
+#define BELT_LAYER				8		//Possible make this an overlay of somethign required to wear a belt?
+#define SUIT_LAYER				9
+#define TAIL_LAYER				10		//bs12 specific. this hack is probably gonna come back to haunt me
+#define GLASSES_LAYER			11
+#define BELT_LAYER_ALT			12
+#define SUIT_STORE_LAYER		13
+#define BACK_LAYER				14
+#define HAIR_LAYER				15		//TODO: make part of head layer?
+#define EAR_L					16
+#define EAR_R					17
+#define FACEMASK_LAYER			18
+#define HEAD_LAYER				19
+#define COLLAR_LAYER			20
+#define HANDCUFF_LAYER			21
+#define LEGCUFF_LAYER			22
+#define L_HAND_LAYER			23
+#define R_HAND_LAYER			24
+#define FIRE_LAYER				25		//If you're on fire
+#define TARGETED_LAYER			26		//BS12: Layer for the target overlay from weapon targeting system
+#define TOTAL_LAYERS			26
 //////////////////////////////////
 
 /mob/living/carbon/human
@@ -355,42 +354,6 @@ var/global/list/damage_icon_parts = list()
 
 	overlays_standing[HAIR_LAYER]	= image(face_standing)
 
-	if(update_icons)   update_icons()
-
-/mob/living/carbon/human/update_mutations(var/update_icons=1)
-	var/image/standing	= image('icons/effects/genetics.dmi')
-	var/add_image = 0
-	var/g = "m"
-	if(gender == FEMALE)	g = "f"
-	// DNA2 - Drawing underlays.
-	for(var/datum/dna/gene/gene in dna_genes)
-		if(!gene.block)
-			continue
-		if(gene.is_active(src))
-			var/underlay=gene.OnDrawUnderlays(src,g)
-			if(underlay)
-				standing.underlays += underlay
-				add_image = 1
-	for(var/mut in mutations)
-		switch(mut)
-			/*
-			if(HULK)
-				standing.underlays	+= "hulk_[g]_s"
-				add_image = 1
-			if(COLD_RESISTANCE)
-				standing.underlays	+= "fire_s"
-				add_image = 1
-			if(TK)
-				standing.underlays	+= "telekinesishead_s"
-				add_image = 1
-			*/
-			if(LASER)
-				standing.overlays	+= "lasereyes_s"
-				add_image = 1
-	if(add_image)
-		overlays_standing[MUTATIONS_LAYER]	= standing
-	else
-		overlays_standing[MUTATIONS_LAYER]	= null
 	if(update_icons)   update_icons()
 
 //Call when target overlay should be added/removed
@@ -964,7 +927,6 @@ var/global/list/damage_icon_parts = list()
 	if(update_icons)   update_icons()
 
 //Human Overlays Indexes/////////
-#undef MUTATIONS_LAYER
 #undef DAMAGE_LAYER
 #undef SURGERY_LEVEL
 #undef UNIFORM_LAYER

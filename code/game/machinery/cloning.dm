@@ -307,7 +307,6 @@
 		occupant.client.perspective = MOB_PERSPECTIVE
 	occupant.loc = loc
 	eject_wait = 0 //If it's still set somehow.
-	domutcheck(occupant) //Waiting until they're out before possible transforming.
 	occupant = null
 
 	biomass -= CLONE_BIOMASS
@@ -428,7 +427,7 @@
 		for(var/i=new_SE.len;i<=DNA_SE_LENGTH;i++)
 			new_SE += rand(1,1024)
 		buf.dna.SE=new_SE
-		buf.dna.SetSEValueRange(MONKEYBLOCK,0xDAC, 0xFFF)
+		//TODO: DNA3 monkey_block
 
 /obj/item/weapon/disk/data/New()
 	..()
